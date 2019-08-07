@@ -26,7 +26,7 @@ USER 0
 COPY ./s2i/bin/ /usr/libexec/s2i
 
 RUN yum install -y centos-release-dotnet centos-release-scl-rh && \
-    INSTALL_PKGS="rh-nodejs10-npm rh-nodejs10-nodejs-nodemon rh-dotnet21-dotnet-sdk-2.1 rsync" && \
+    INSTALL_PKGS="rh-nodejs10-npm rh-nodejs10-nodejs-nodemon rh-dotnet21-dotnet-sdk-2.1 rsync leveldb" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     yum clean all -y && \
